@@ -278,6 +278,8 @@ int main(int argc, char *argv[]) {
 	perror("bind");
 	exit(1);
     }
+    
+    sendto(sock_fd, STARTSIGN, sizeof(STARTSIGN), 0, (struct sockaddr *)&remote, sizeof(remote));
     /* connection request */
     /*if (connect(sock_fd, (struct sockaddr*) &remote, sizeof(remote)) < 0){
       perror("connect()");
