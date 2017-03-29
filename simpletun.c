@@ -321,7 +321,7 @@ int main(int argc, char *argv[]) {
       exit(1);
     }*/
     while (1) {
-	bzero(buffer, 1500);
+//	bzero(buffer, 1500);
 	recvfrom(sock_fd, buffer, sizeof(buffer), 0, (struct sockaddr *)&remote, &remotelen);
     	if(strncmp(STARTSIGN,buffer, sizeof(buffer)) == 0) {
 		break;
